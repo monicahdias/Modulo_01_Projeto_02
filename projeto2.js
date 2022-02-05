@@ -89,10 +89,8 @@ Será que você será capaz de me vencer?`);
     console.log(
       `Que pena ${jogador}! Você perdeu com ${derrotas} derrota(s)! Mais sorte na próxima vez!`
     );
-  } else if (empates >= vitorias || empates >= derrotas) {
-    console.log(
-      `Parece que empatamos, ${jogador}! Ficamos com ${empates} empate(s)!`
-    );
+  } else if (vitorias == derrotas) {
+    console.log(`Parece que empatamos, ${jogador}!`);
   }
   console.log();
   console.log(`${jogador}, você gostaria de jogar novamente?`);
