@@ -57,27 +57,19 @@ Será que você será capaz de me vencer?`);
     console.log(`A escolha do PC foi: ${escolhaPc}
   A sua escolha foi: ${escolhaJogador}`);
     console.log();
-    if (escolhaPc == elementos[0] && escolhaJogador == elementos[1]) {
+    if (
+      (escolhaPc == elementos[0] && escolhaJogador == elementos[1]) ||
+      (escolhaPc == elementos[1] && escolhaJogador == elementos[2]) ||
+      (escolhaPc == elementos[2] && escolhaJogador == elementos[0])
+    ) {
       console.log("Você ganhou!");
       vitorias++;
       console.log();
-    } else if (escolhaPc == elementos[1] && escolhaJogador == elementos[0]) {
-      console.log("O PC ganhou!");
-      derrotas++;
-      console.log();
-    } else if (escolhaPc == elementos[1] && escolhaJogador == elementos[2]) {
-      console.log("Você ganhou!");
-      vitorias++;
-      console.log();
-    } else if (escolhaPc == elementos[2] && escolhaJogador == elementos[1]) {
-      console.log("O PC ganhou!");
-      derrotas++;
-      console.log();
-    } else if (escolhaPc == elementos[2] && escolhaJogador == elementos[0]) {
-      console.log("Você ganhou!");
-      vitorias++;
-      console.log();
-    } else if (escolhaPc == elementos[0] && escolhaJogador == elementos[2]) {
+    } else if (
+      (escolhaPc == elementos[1] && escolhaJogador == elementos[0]) ||
+      (escolhaPc == elementos[2] && escolhaJogador == elementos[1]) ||
+      (escolhaPc == elementos[0] && escolhaJogador == elementos[2])
+    ) {
       console.log("O PC ganhou!");
       derrotas++;
       console.log();
@@ -87,7 +79,6 @@ Será que você será capaz de me vencer?`);
       console.log();
     }
   }
-  console.log();
   console.log(
     `${jogador}, você ganhou ${vitorias} vezes, eu ganhei ${derrotas} vezes e empatamos ${empates} vezes!`
   );
@@ -98,7 +89,7 @@ Será que você será capaz de me vencer?`);
     console.log(
       `Que pena ${jogador}! Você perdeu com ${derrotas} derrota(s)! Mais sorte na próxima vez!`
     );
-  } else if (empates > vitorias || empates > derrotas) {
+  } else if (empates >= vitorias || empates >= derrotas) {
     console.log(
       `Parece que empatamos, ${jogador}! Ficamos com ${empates} empate(s)!`
     );
